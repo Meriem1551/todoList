@@ -12,16 +12,16 @@ function deleteTask(index){
 
 function createTaskList(){
     let taskList = '';
-    for(let i = 0; i < tasksArray.length; i++){
+    tasksArray.forEach(function (value, index){
         let task = `
-        <div class="taskContainer">
-            <p>${tasksArray[i].taskObj.task}</p>
-            <p> ${tasksArray[i].taskObj.date}</p> 
-            <button id="delete" onclick='deleteTask(${i})'>Delete</button>
-        </div>
-        `;
+       <div class="taskContainer">
+           <p>${value.taskObj.task}</p>
+             <p> ${value.taskObj.date}</p> 
+            <button id="delete" onclick='deleteTask(${index})'>Delete</button>
+       </div>
+       `;
         taskList += task;
-    }
+    } );
     document.getElementById('taskList').innerHTML = taskList;
 }
 
