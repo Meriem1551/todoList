@@ -12,7 +12,7 @@ function deleteTask(index){
 
 function createTaskList(){
     let taskList = '';
-    tasksArray.forEach(function (value, index){
+    tasksArray.forEach((value, index)=>{
         let task = `
        <div class="taskContainer">
            <p>${value.taskObj.task}</p>
