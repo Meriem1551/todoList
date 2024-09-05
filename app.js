@@ -1,5 +1,8 @@
+let addButton = document.getElementById('add');
 let tasksArray = [];
 
+
+addButton.addEventListener('click', addTask);
 
 function deleteTask(index){
    tasksArray.splice(index,1);
@@ -18,7 +21,6 @@ function createTaskList(){
        </div>
        `;
         taskList += task;
-        console.log(value.taskObj, index);
      } );
     document.getElementById('taskList').innerHTML = taskList;
 }
