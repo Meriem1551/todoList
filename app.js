@@ -1,8 +1,5 @@
 let tasksArray = [];
-let taskObj = {
-    task:'',
-    date:''
-}
+
 
 function deleteTask(index){
    tasksArray.splice(index,1);
@@ -21,15 +18,18 @@ function createTaskList(){
        </div>
        `;
         taskList += task;
-    } );
+        console.log(value.taskObj, index);
+     } );
     document.getElementById('taskList').innerHTML = taskList;
 }
 
 function addTask(){
     let taskInput = document.getElementById('inputTask');
     let dateInput = document.getElementById('dateInput');
-    taskObj.task = taskInput.value;
-    taskObj.date = dateInput.value;
+    let taskObj = {
+        task:taskInput.value,
+        date: dateInput.value
+    }
     if(taskObj.task != '' && taskObj.date != ''){
         tasksArray.push({taskObj});
     }
